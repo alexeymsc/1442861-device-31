@@ -1,0 +1,364 @@
+/*ОПРЕДЕЛЯЕМ КАСТОМНЫЕ СВОЙСТВА*/
+
+:root {
+  --basic-black: #000000;
+  --basic-dark: #363636;
+  --basic-grey: #464646;
+  --basic-half-grey: #7e7e7e;
+  --basic-grey-light: #e5e5e5;
+  --basic-white: #ffffff;
+  --special-yellow-dark: #f0c52e;
+  --special-yellow-light: #f7e296;
+  --special-green: #91c92f;
+  --special-pink: #f6dada;
+}
+
+/*ПОДКЛЮЧАЕМ ШРИФТЫ*/
+
+@font-face {
+  font-family: "Gilroy";
+  src: url("../fonts/gilroyextrabold.woff2") format("woff2");
+  src: url("../fonts/gilroyextrabold.woff") format("woff");
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Gilroy";
+  src: url("../fonts/gilroylight.woff2") format("woff2");
+  src: url("../fonts/gilroylight.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Open Sans";
+  src: url("../fonts/opensans.woff2") format("woff2");
+  src: url("../fonts/opensans.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Open Sans";
+  src: url("../fonts/opensans.woff2") format("woff2");
+  src: url("../fonts/opensans.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Open Sans";
+  src: url("../fonts/opensanslight.woff2") format("woff2");
+  src: url("../fonts/opensanslight.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+}
+
+/*ОТМЕНЯЕМ ИСХОДНОЕ ОФОРМЛЕНИЕ ССЫЛОК И СПИСКОВ*/
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/*СКРЫВАЕМ НЕВИДИМЫЕ ЗАГОЛОВКИ*/
+
+.main-title, 
+.top-goods-section-title, 
+.top-goods-item-title, 
+.popular-section-title, 
+.features-section-title, 
+.partners-section-title, 
+.contact-us-section-title, 
+.social-button-title {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+}
+
+.customer-panel-item, 
+.site-navigation, 
+.catalog-item, 
+.top-goods-list, 
+.slider-control, 
+.popular-item, 
+.features-list-item, 
+.features-panel-item, 
+.partners-list-item, 
+.social-button {
+  list-style: none;
+}
+
+/*ОСНОВНАЯ СТИЛИЗАЦИЯ*/
+
+body {
+  font-family: "Gilroy", "Arial", sans-serif;
+  color: var(--basic-black);
+}
+
+.main-header {
+  background-color: var(--special-yellow-light);
+}
+
+.main-footer {
+  background-color: var(--basic-dark);
+  color: var(--basic-white)
+}
+
+.site-navigation-item, 
+.catalog-button, .button, 
+.popular-item, 
+.contact-form {
+  text-transform: uppercase;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+  font-size: 18px;
+  line-height: 22px;
+  outline: none;
+}
+
+.catalog-item, 
+.customer-panel, 
+.main-header-search, 
+.footer-address, 
+.footer-tel {
+  text-transform: initial;
+  font-family: "Open Sans", "Arial", sans-serif;
+  font-weight: 300;
+  font-size: 15px;
+  line-height: 20px;
+  letter-spacing: initial;
+  font-style: normal;
+}
+
+.top-goods-item-slogan, 
+.features-list-item-header, 
+.about-us-section-title, 
+.contacts-section-title {
+  font-weight: 800;
+  font-size: 47px;
+  line-height: 58px;
+}
+
+.features-list-item-header {
+  letter-spacing: 0.2em;
+}
+
+.features {
+  background-image: linear-gradient(transparent 115px, var(--basic-grey-light) 115px);
+}
+
+.top-goods-item-description, 
+.features-list-item-description, 
+.about-us-description, 
+.contacts-description {
+  font-style: normal;
+  font-family: "Open Sans", "Arial", sans-serif;
+  font-weight: 300;
+  font-size: 15px;
+}
+
+.top-goods-item-details-head, 
+
+.features-list-item-description {
+  line-height: 30px;
+  letter-spacing: 0.1em;
+}
+
+.transport-companies {
+  font-weight: 800;
+  font-size: 16px;
+  line-height: 28px;
+}
+
+.partners-list-item:not(:hover) {
+  filter: grayscale(20);
+  opacity: 0.3;
+}
+
+
+
+/*СТИЛИЗУЕМ ПАНЕЛЬ ПОЛЬЗОВАТЕЛЯ, ПОИСК И НАВИГАЦИЮ*/
+
+.main-header-search, 
+.catalog-button {
+  border: none;
+  background: transparent;
+  outline: none;
+}
+
+.main-footer a:hover, 
+.main-header a:hover, 
+.main-header-search:hover {
+  opacity: 0.6;
+}
+
+.main-footer a:focus, 
+.main-header a:focus, 
+.main-header-search {
+  opacity: 0.3;
+  outline: none;
+}
+
+.search-form:focus-within .main-header-search{
+  opacity: 1;
+}
+
+.main-header-search +.search-button{
+  font-family: "Open Sans", "Arial", sans-serif;
+  font-size:15px;
+  line-height: 20px;
+  text-transform: uppercase;
+  background-color:transparent;
+  border: 2px solid var(--basic-black);
+  opacity: 0;
+}
+
+.main-header-search:focus +.search-button {
+  opacity: 1;
+  
+}
+
+.main-header-search:focus +.search-button:hover {
+  background-color:var(--basic-black);
+  color:var(--basic-white);
+  opacity: unset;
+}
+
+.main-header-search +.search-button:focus:focus {
+  background-color:var(--basic-black);
+  color:rgba(255, 255, 255, 0.3);
+  opacity: unset;
+}
+
+
+
+/*СТИЛИЗУЕМ ХАРАКТЕРИСТИКИ ТОП-ТОВАРОВ В СЛАЙДЕРЕ*/
+
+.top-goods-item-details {
+  font-family: "Gilroy", "Arial", sans-serif;
+  font-weight: 300;
+  letter-spacing: 0.1em;
+  font-style: normal;
+}
+
+.top-goods-item-details-values {
+  font-size: 36px;
+  line-height: 42px;
+}
+
+.top-goods-item-details-head th {
+  font-size: 13px;
+  line-height: 15px;
+  font-weight: 300;
+}
+
+
+/*СТИЛИЗУЕМ БЛОК ПОПУЛЯРНЫХ ТОВАРОВ*/
+
+.popular-item {
+  letter-spacing: 0.05em;
+  text-transform: none;
+}
+
+.popular-item-wrapper {
+  background-color: var(--special-yellow-light);
+  display: inline-block
+}
+
+.popular-item a:focus 
+.popular-item-wrapper, 
+.popular-item a:hover .popular-item-wrapper {
+  background-color: var(--special-yellow-dark);
+}
+
+.popular-item a:focus img, 
+.popular-item a:focus p {
+  opacity: 0.3;
+}
+
+
+/*СТИЛИЗУЕМ КНОПКИ*/
+
+.button {
+  background-image: linear-gradient( 
+    var(--basic-white) 33%, 
+    var(--special-yellow-dark) 33%, 
+    var(--special-yellow-dark) 66%, 
+    var(--basic-white) 33%
+    );
+  padding: 0px 43px;
+  outline: none;
+  border: none;
+}
+
+.button:hover, 
+.button:focus {
+  background-image: none;
+  background-color: var(--special-yellow-dark);
+  padding: 9px 43px;
+}
+
+.button:focus {
+  color: rgba(0, 0, 0, 0.3);
+}
+
+.features-panel-item .button:focus {
+  background-color: var(--basic-black);
+  color: var(--special-yellow-light);
+}
+
+
+/* СТИЛИЗУЕМ МОДАЛЬНОЕ ОКНО "НАПИШИТЕ НАМ" */
+
+.contact-form {
+  text-transform: none;
+  letter-spacing: initial;
+}
+
+.contact-name, 
+.contact-email, 
+.contact-message {
+  font-family: "Open Sans", "Arial", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 19px;
+  background-color: #EAEAEA;
+  outline: none;
+  border: none;
+}
+
+.contact-name::placeholder, 
+.contact-email::placeholder, 
+.contact-message::placeholder {
+  color: rgba(0, 0, 0, 0.4);
+}
+
+.contact-name:hover, 
+.contact-email:hover, 
+.contact-message:hover {
+  background-color: var(--basic-grey-light);
+}
+
+.contact-name:focus, 
+.contact-email:focus, 
+.contact-message:focus {
+  background-color: transparent;
+  border: solid 2px var(--special-yellow-light);
+  color: var(--basic-black);
+}
+
+.contact-name:invalid, 
+.contact-email:invalid, 
+.contact-message:invalid {
+  background-color: var(--special-pink);
+}
