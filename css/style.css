@@ -70,13 +70,13 @@ img {
 /*СКРЫВАЕМ НЕВИДИМЫЕ ЗАГОЛОВКИ*/
 
 .main-title, 
-.top-goods-section-title, 
-.top-goods-item-title, 
-.popular-section-title, 
-.features-section-title, 
-.partners-section-title, 
-.contact-us-section-title, 
-.social-button-title {
+.top-goods__section-title, 
+.top-goods-card__title, 
+.popular__section-title, 
+.features__section-title, 
+.partners__section-title, 
+.contact-us__section-title, 
+.social-button__title {
   position: absolute;
   clip: rect(0 0 0 0);
   width: 1px;
@@ -84,15 +84,15 @@ img {
   margin: -1px;
 }
 
-.customer-panel-item, 
+.customer-panel__item, 
 .site-navigation, 
-.catalog-item, 
-.top-goods-list, 
+.catalog-list__item, 
+.top-goods__cards, 
 .slider-control, 
 .popular-item, 
-.features-list-item, 
-.features-panel-item, 
-.partners-list-item, 
+.feature-card, 
+.features-buttons__button, 
+.partners__list-item, 
 .social-button {
   list-style: none;
 }
@@ -113,8 +113,8 @@ body {
   color: var(--basic-white)
 }
 
-.site-navigation-item, 
-.catalog-button, .button, 
+.site-navigation__item, 
+.catalog-panel__button, .button, 
 .popular-item, 
 .contact-form {
   text-transform: uppercase;
@@ -125,11 +125,11 @@ body {
   outline: none;
 }
 
-.catalog-item, 
+.catalog-list__item, 
 .customer-panel, 
-.main-header-search, 
-.footer-address, 
-.footer-tel {
+.search-form__input, 
+.main-footer__address, 
+.main-footer__tel {
   text-transform: initial;
   font-family: "Open Sans", "Arial", sans-serif;
   font-weight: 300;
@@ -139,16 +139,16 @@ body {
   font-style: normal;
 }
 
-.top-goods-item-slogan, 
-.features-list-item-header, 
-.about-us-section-title, 
-.contacts-section-title {
+.top-goods-card__slogan, 
+.feature-card__header, 
+.about-us__section-title, 
+.contacts__section-title {
   font-weight: 800;
   font-size: 47px;
   line-height: 58px;
 }
 
-.features-list-item-header {
+.feature-card__header {
   letter-spacing: 0.2em;
 }
 
@@ -156,19 +156,19 @@ body {
   background-image: linear-gradient(transparent 115px, var(--basic-grey-light) 115px);
 }
 
-.top-goods-item-description, 
-.features-list-item-description, 
-.about-us-description, 
-.contacts-description {
+.top-goods-card__description, 
+.feature-card__description, 
+.about-us__description, 
+.contacts__description {
   font-style: normal;
   font-family: "Open Sans", "Arial", sans-serif;
   font-weight: 300;
   font-size: 15px;
 }
 
-.top-goods-item-details-head, 
+.item-details__head, 
 
-.features-list-item-description {
+.feature-card__description {
   line-height: 30px;
   letter-spacing: 0.1em;
 }
@@ -179,7 +179,7 @@ body {
   line-height: 28px;
 }
 
-.partners-list-item:not(:hover) {
+.partners__list-item:not(:hover) {
   filter: grayscale(20);
   opacity: 0.3;
 }
@@ -188,8 +188,8 @@ body {
 
 /*СТИЛИЗУЕМ ПАНЕЛЬ ПОЛЬЗОВАТЕЛЯ, ПОИСК И НАВИГАЦИЮ*/
 
-.main-header-search, 
-.catalog-button {
+.search-form__input, 
+.catalog-panel__button {
   border: none;
   background: transparent;
   outline: none;
@@ -197,22 +197,22 @@ body {
 
 .main-footer a:hover, 
 .main-header a:hover, 
-.main-header-search:hover {
+.search-form__input:hover {
   opacity: 0.6;
 }
 
 .main-footer a:focus, 
 .main-header a:focus, 
-.main-header-search {
+.search-form__input {
   opacity: 0.3;
   outline: none;
 }
 
-.search-form:focus-within .main-header-search{
+.search-form:focus-within .search-form__input{
   opacity: 1;
 }
 
-.main-header-search +.search-button{
+.search-form__input +.search-form__button{
   font-family: "Open Sans", "Arial", sans-serif;
   font-size:15px;
   line-height: 20px;
@@ -222,18 +222,18 @@ body {
   opacity: 0;
 }
 
-.main-header-search:focus +.search-button {
+.search-form__input:focus +.search-form__button {
   opacity: 1;
   
 }
 
-.main-header-search:focus +.search-button:hover {
+.search-form__input:focus +.search-form__button:hover {
   background-color:var(--basic-black);
   color:var(--basic-white);
   opacity: unset;
 }
 
-.main-header-search +.search-button:focus:focus {
+.search-form__input +.search-form__button:focus:focus {
   background-color:var(--basic-black);
   color:rgba(255, 255, 255, 0.3);
   opacity: unset;
@@ -243,19 +243,19 @@ body {
 
 /*СТИЛИЗУЕМ ХАРАКТЕРИСТИКИ ТОП-ТОВАРОВ В СЛАЙДЕРЕ*/
 
-.top-goods-item-details {
+.top-goods-card__details {
   font-family: "Gilroy", "Arial", sans-serif;
   font-weight: 300;
   letter-spacing: 0.1em;
   font-style: normal;
 }
 
-.top-goods-item-details-values {
+.item-details__values {
   font-size: 36px;
   line-height: 42px;
 }
 
-.top-goods-item-details-head th {
+.item-details__head th {
   font-size: 13px;
   line-height: 15px;
   font-weight: 300;
@@ -269,14 +269,14 @@ body {
   text-transform: none;
 }
 
-.popular-item-wrapper {
+.popular-item__image {
   background-color: var(--special-yellow-light);
   display: inline-block
 }
 
 .popular-item a:focus 
-.popular-item-wrapper, 
-.popular-item a:hover .popular-item-wrapper {
+.popular-item__image, 
+.popular-item a:hover .popular-item__image {
   background-color: var(--special-yellow-dark);
 }
 
@@ -311,7 +311,7 @@ body {
   color: rgba(0, 0, 0, 0.3);
 }
 
-.features-panel-item .button:focus {
+.features-buttons__button .button:focus {
   background-color: var(--basic-black);
   color: var(--special-yellow-light);
 }
@@ -324,9 +324,9 @@ body {
   letter-spacing: initial;
 }
 
-.contact-name, 
-.contact-email, 
-.contact-message {
+.contact-form__name, 
+.contact-form__email, 
+.contact-form__message {
   font-family: "Open Sans", "Arial", sans-serif;
   font-style: normal;
   font-weight: normal;
@@ -337,28 +337,28 @@ body {
   border: none;
 }
 
-.contact-name::placeholder, 
-.contact-email::placeholder, 
-.contact-message::placeholder {
+.contact-form__name::placeholder, 
+.contact-form__email::placeholder, 
+.contact-form__message::placeholder {
   color: rgba(0, 0, 0, 0.4);
 }
 
-.contact-name:hover, 
-.contact-email:hover, 
-.contact-message:hover {
+.contact-form__name:hover, 
+.contact-form__email:hover, 
+.contact-form__message:hover {
   background-color: var(--basic-grey-light);
 }
 
-.contact-name:focus, 
-.contact-email:focus, 
-.contact-message:focus {
+.contact-form__name:focus, 
+.contact-form__email:focus, 
+.contact-form__message:focus {
   background-color: transparent;
   border: solid 2px var(--special-yellow-light);
   color: var(--basic-black);
 }
 
-.contact-name:invalid, 
-.contact-email:invalid, 
-.contact-message:invalid {
+.contact-form__name:invalid, 
+.contact-form__email:invalid, 
+.contact-form__message:invalid {
   background-color: var(--special-pink);
 }
