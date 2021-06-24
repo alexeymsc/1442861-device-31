@@ -69,14 +69,7 @@ img {
 
 /*СКРЫВАЕМ НЕВИДИМЫЕ ЗАГОЛОВКИ*/
 
-.main-title, 
-.top-goods__section-title, 
-.top-goods-card__title, 
-.popular__section-title, 
-.features__section-title, 
-.partners__section-title, 
-.contact-us__section-title, 
-.social-button__title {
+.visually-hidden {
   position: absolute;
   clip: rect(0 0 0 0);
   width: 1px;
@@ -85,6 +78,7 @@ img {
 }
 
 .customer-panel__item, 
+.customer-panel__item-logged,
 .site-navigation, 
 .catalog-list__item, 
 .top-goods__cards, 
@@ -93,7 +87,12 @@ img {
 .feature-card, 
 .features-buttons__button, 
 .partners__list-item, 
-.social-button {
+.social-button,
+.breadcrumbs,
+.sort-type,
+.order-type,
+.item-cards,
+.pages {
   list-style: none;
 }
 
@@ -197,13 +196,15 @@ body {
 
 .main-footer a:hover, 
 .main-header a:hover, 
-.search-form__input:hover {
+.search-form__input:hover,
+.breadcrumbs__item:not(:last-child):hover {
   opacity: 0.6;
 }
 
 .main-footer a:focus, 
 .main-header a:focus, 
-.search-form__input {
+.search-form__input,
+.breadcrumbs__item {
   opacity: 0.3;
   outline: none;
 }
@@ -237,6 +238,19 @@ body {
   background-color:var(--basic-black);
   color:rgba(255, 255, 255, 0.3);
   opacity: unset;
+}
+
+.customer-panel__item-logged::before {
+  content:"Валентин Петухов";
+  padding-right: 5px;
+}
+
+.main-header .customer-panel__item-logged {
+  color:rgba(0,0,0, 0.5);
+}
+
+.main-header .customer-panel__item-logged::before {
+  color:rgba(0,0,0, 1);
 }
 
 
@@ -289,11 +303,12 @@ body {
 /*СТИЛИЗУЕМ КНОПКИ*/
 
 .button {
+  background-color: transparent;
   background-image: linear-gradient( 
-    var(--basic-white) 33%, 
+    transparent 33%, 
     var(--special-yellow-dark) 33%, 
     var(--special-yellow-dark) 66%, 
-    var(--basic-white) 33%
+    transparent 33%
     );
   padding: 0px 43px;
   outline: none;
@@ -362,3 +377,141 @@ body {
 .contact-form__message:invalid {
   background-color: var(--special-pink);
 }
+
+/*СТИЛИЗУЕМ КАТАЛОГ*/
+
+.breadcrumbs{
+  color:var(--basic-black) !important;
+  opacity: 1 !important;
+}
+
+.breadcrumbs__item:not(:last-child) a:focus{
+  opacity: 0.1;
+}
+
+
+.filter__title {
+  background-color: #DCDCDC;
+}
+
+.filter__panel, .sort-panel {
+  background-color:var(--basic-grey-light)
+}
+
+.sort-panel__title, .filter__title {
+  text-transform: uppercase;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  font-size: 16px;
+  line-height: 20px;
+  outline: none;
+}
+
+
+.sort-type__item,
+.sort-type__item-active {
+  background-color:transparent;
+  font-family: "Open Sans", "Arial", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 19px;
+  border: none;
+  outline: none;
+}
+
+.sort-type__item,
+.pages__page {
+  opacity: 0.3;
+}
+
+.sort-type__item:hover,
+.pages__page:hover {
+  opacity: 0.6;
+}
+
+.sort-type__item:focus,
+.pages__page:focus {
+  opacity: 1;
+}
+
+/*КАТАЛОГ. Панель пагинации*/
+
+.pagination__back, .pagination__forward{
+  text-transform: uppercase;
+  background-color:transparent;
+  outline: none;
+  font-weight: 800;
+  border: none;
+  line-height: 20px;
+  letter-spacing: 0.1em;
+}
+
+.pagination{
+  background-color: #EBEBEB;
+  font-weight: 800;
+  line-height: 20px;
+  letter-spacing: 0.1em;
+}
+
+.pagination__back:hover,.pagination__forward:hover{
+  background-color: #d9d9d9;
+}
+
+.pagination__back:focus,.pagination__forward:focus{
+  color: rgba(0, 0, 0, 0.3);
+}
+
+
+
+/*КАТАЛОГ. Карточка товара*/
+
+.item-description__name{
+  font-weight: 800;
+  font-size: 18px;
+  line-height: 22px;
+  letter-spacing: 0.05em;
+}
+
+.item-description__price {
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 18px;
+  letter-spacing: 0.05em;  
+}
+
+.item-card:hover img,
+.item-card:focus img{
+  opacity: 0.7;
+}
+
+.item-card__compare-button{
+  font-family: "Open Sans", "Arial", sans-serif;
+  font-weight: 300;
+  font-size: 13px;
+  line-height: 18px;
+  letter-spacing: 0.1em;
+  outline: none;
+  border: none;
+  background:none;
+  opacity: 0.5;
+}
+
+.item-card__compare-button:hover {
+  opacity:1;
+}
+
+.item-card__compare-button:focus {
+  opacity:0.2;
+}
+
+.item-card__cart-button,
+.item-card__compare-button {
+  visibility: hidden;
+}
+.item-card:hover >.item-card__cart-button,
+.item-card:focus >.item-card__cart-button,
+.item-card:hover > .item-card__compare-button,
+.item-card:focus > .item-card__compare-button {
+  visibility: visible;
+}
+
