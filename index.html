@@ -16,10 +16,10 @@
   <header class = "main-header">
     <a class = "main-header__logo" href = "index.html"><img src="img/device_logo_black.svg" width="163" height="35" alt="Интернет-магазин Девайс"></a>
     <div class = "main-header__container">
-        <form class="search-form main-header__search" action="https://echo.htmlacademy.ru" method="POST">
-          <input class = "search-form__input" type="search" name = "search" placeholder="Поиск по сайту">
-          <button class = "search-form__button" type="submit">Найти</button>
-        </form>
+      <form class="search-form main-header__search" action="https://echo.htmlacademy.ru" method="POST">
+        <input class = "search-form__input" type="search" name = "search" placeholder="Поиск по сайту">
+        <button class = "search-form__button" type="submit">Найти</button>
+      </form>
       <ul class = "customer-panel">
         <li class = "customer-panel__item"><a href="#">Войти</a></li>
         <li class = "customer-panel__item"><a href="#">Сравнить</a></li>
@@ -48,7 +48,7 @@
     </div>
   </header>
 
-  <main class="container">
+  <main class="main-page container">
     <h1 class="visually-hidden">Интернет-магазин Девайс</h1>
 
     <section class="top-goods">
@@ -59,10 +59,10 @@
           <p class="top-goods-card__number">
             01
           </p>
-          <div>
+          <div class="top-goods-card__image">
             <img src="img/slider-quadrocopter.png" width="526" height="334" alt="Квадрокоптер">
           </div>
-          <div>
+
             <p class="top-goods-card__slogan">
               Порхает как бабочка,
               жалит как пчела!
@@ -82,7 +82,7 @@
                 <th>Радиус поражения</th>
               </tr>
             </table>
-          </div>
+
         </li>
 
         <li class="top-goods-card">
@@ -90,27 +90,25 @@
           <p class="top-goods-card__number">
             02
           </p>
-          <div>
+          <div class="top-goods-card__image">
             <img src="img/slider-fitbit.png" width="345" height="485" alt="Умные часы">
           </div>
-          <div>
-            <p class="top-goods-card__slogan">
-              Худеем правильно!
-            </p>
-            <p class="top-goods-card__description">
-              Мотивирующие фитнес-браслеты помогут найти в себе силы <br>
-              не пропускать занятия и соблюдать диету.
-            </p>
-            <a class="button" href="catalog.html">Подробнее</a>
-            <table class="top-goods-card__details">
-              <tr class="item-details__values">
-                <td>48 часов</td>
-              </tr>
-              <tr class="item-details__head">
-                <th>Без подзарядки</th>
-              </tr>
-            </table>
-          </div>
+          <p class="top-goods-card__slogan">
+            Худеем правильно!
+          </p>
+          <p class="top-goods-card__description">
+            Мотивирующие фитнес-браслеты помогут найти в себе силы <br>
+            не пропускать занятия и соблюдать диету.
+          </p>
+          <a class="button" href="catalog.html">Подробнее</a>
+          <table class="top-goods-card__details">
+            <tr class="item-details__values">
+              <td>48 часов</td>
+            </tr>
+            <tr class="item-details__head">
+              <th>Без подзарядки</th>
+            </tr>
+          </table>
         </li>
 
         <li class="top-goods-card">
@@ -118,10 +116,9 @@
           <p class="top-goods-card__number">
             03
           </p>
-          <div>
+          <div class="top-goods-card__image">
             <img src="img/slider-selfie_stick.png" width="384" height="486" alt="Селфи-палка">
           </div>
-          <div>
             <p class="top-goods-card__slogan">
               Делай селфи, <br>
               как Бен Стиллер!
@@ -340,15 +337,15 @@
   <section class="contact-us_modal">
     <h2 class="visually-hidden">Напишите нам</h2>
     <form class ="contact-form contact-us__form" action="https://echo.htmlacademy.ru" method="POST">
-      <label>Ваше имя:
+      <label class="contact-form__field">Ваше имя:
         <input class="contact-form__name" type="text" name="name" placeholder="Имя Фамилия" required>
       </label>
 
-      <label>Ваш e-mail:
+      <label class="contact-form__field">Ваш e-mail:
         <input class="contact-form__email" type="email" name="email" placeholder="email@example.com" required>
       </label>
 
-      <label>Текст письма:
+      <label class="contact-form__field">Текст письма:
         <textarea class="contact-form__message" name="message" rows="5" placeholder="В свободной форме" required></textarea>
       </label>
 

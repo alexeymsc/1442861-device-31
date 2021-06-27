@@ -96,6 +96,192 @@ img {
   list-style: none;
 }
 
+/*_________________GRID_____________________*/
+
+.page {
+  height: 100%;
+}
+
+.page-body{
+  min-height: 100%;
+  display: grid;
+  grid-template-rows: min-content 1fr min-content;
+  align-content: start;
+}
+
+.main-page.container {
+  display: grid;
+  grid-template-rows: repeat(5,min-content);
+}
+
+.main-page .wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr ;
+}
+
+.features{
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+}
+/*---------------GRID-CUSTOMER-PANEL-------------*/
+.customer-panel {
+  display: grid;
+  grid-template-columns: min-content 1fr 1fr;
+  padding: 0px ;
+  gap:60px;
+}
+
+.customer-panel__item{
+  justify-self: end;
+}
+
+.customer-panel__item:first-of-type{
+  justify-self: start;
+}
+
+
+/*-----------------GRID-HEADER-------------------*/
+.main-header {
+  display: grid;
+  grid-template-rows: min-content min-content 1fr;
+}
+
+
+.main-header__container:first-of-type{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.site-navigation {
+  display: grid;
+  grid-template-columns: 50% 1fr 1fr 2fr;
+  margin: 0px;
+  padding:0px;
+}
+
+.site-navigation__item:last-of-type{
+  justify-self: end;
+}
+
+/*--------------GRID-SLIDER-CARD---------------*/
+
+.top-goods-card{
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  grid-template-rows: repeat(4, min-content);
+  grid-template-areas: 
+  "img slogan slogan"
+  "img slogan slogan"
+  "img description description"
+  "img more ."
+  "img details details";
+}
+
+.top-goods-card__description{
+  grid-area: description;
+}
+
+.top-goods-card .button{
+  grid-area: more;
+}
+
+.top-goods-card__image{
+  grid-area: img;
+  min-height: 100%;
+  min-width: 100%;
+}
+
+.top-goods-card__slogan{
+  grid-area:slogan;
+  z-index: 2;
+}
+
+.top-goods-card__details{
+  grid-area:details;
+}
+
+.top-goods-card__number{
+  grid-row:1/2;
+  grid-column: -2/-1;
+  z-index: 1;
+  margin:0px;
+  align-content: start;
+}
+
+
+
+/*--------------------GRID-FOOTER---------------*/
+.main-footer{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  
+  grid-template-areas: 
+  "logo panel panel"
+  "nav nav nav"
+  ". social copyright";
+}
+
+.main-footer__logo{
+  grid-area: logo;
+}
+.main-footer__container:nth-of-type(1) {
+grid-area: panel;
+justify-self: end;
+}
+
+.main-footer__container:nth-of-type(2) {
+  grid-area: nav;
+
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  }
+
+.main-footer__container:nth-of-type(3) {
+  grid-area: social;
+}
+
+.copyright{
+  grid-area:copyright
+}
+
+.main-footer__container .site-navigation{
+  grid-template-columns: min-content min-content min-content;
+  gap: 36px;
+  justify-self: center;
+}
+  
+
+/*--------------GRID-MODAL---------------*/
+
+.contact-us__form{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: min-content 1fr min-content;
+  grid-template-areas: 
+  "name mail"
+  "message message"
+  "submit .";
+  gap:32px 40px;
+}
+
+
+.contact-form__field:nth-of-type(1){
+ grid-area: name;
+}
+
+.contact-form__field:nth-of-type(2){
+  grid-area: mail;
+ }
+
+.contact-form__field:nth-of-type(3){
+  grid-area: message;
+}
+
+.contact-form__button{
+grid-area: submit;
+}
+
 /*ОСНОВНАЯ СТИЛИЗАЦИЯ*/
 
 body {
@@ -194,22 +380,26 @@ body {
   outline: none;
 }
 
-.main-footer a:hover, 
+.copyright:hover,
 .main-header a:hover, 
 .search-form__input:hover,
+.main-footer__logo:hover,
+.site-navigation a:hover,
 .breadcrumbs__item:not(:last-child):hover {
   opacity: 0.6;
 }
 
 .main-footer a:focus, 
 .main-header a:focus, 
+.site-navigation a:focus,
 .search-form__input,
 .breadcrumbs__item {
   opacity: 0.3;
   outline: none;
 }
 
-.search-form:focus-within .search-form__input{
+.search-form:focus-within .search-form__input,
+.search-form__input:focus +.search-form__button{
   opacity: 1;
 }
 
@@ -223,10 +413,6 @@ body {
   opacity: 0;
 }
 
-.search-form__input:focus +.search-form__button {
-  opacity: 1;
-  
-}
 
 .search-form__input:focus +.search-form__button:hover {
   background-color:var(--basic-black);
@@ -254,6 +440,27 @@ body {
 }
 
 
+.main-footer .customer-panel__item a,
+.main-footer .customer-panel__item-logged a,
+.main-footer .customer-panel__item-logged:before {
+  color:var(--basic-white);
+  opacity: 0.7;
+}
+
+.main-footer .customer-panel__item a:hover,
+.main-footer .customer-panel__item-logged a:hover{
+  color:var(--basic-white);
+  opacity:1;
+}
+
+.main-footer .customer-panel__item a:focus,
+.main-footer .customer-panel__item-logged a:focus{
+  color:var(--basic-white);
+  opacity: 0.3;
+}
+
+
+
 
 /*СТИЛИЗУЕМ ХАРАКТЕРИСТИКИ ТОП-ТОВАРОВ В СЛАЙДЕРЕ*/
 
@@ -262,6 +469,13 @@ body {
   font-weight: 300;
   letter-spacing: 0.1em;
   font-style: normal;
+}
+
+.top-goods-card__number{
+  font-weight: 800;
+  font-size: 179px;
+  text-transform: uppercase;
+  color:var(--basic-white);
 }
 
 .item-details__values {
@@ -377,6 +591,7 @@ body {
 .contact-form__message:invalid {
   background-color: var(--special-pink);
 }
+
 
 /*СТИЛИЗУЕМ КАТАЛОГ*/
 
