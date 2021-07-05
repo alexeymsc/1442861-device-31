@@ -32,12 +32,18 @@
           <li class = "catalog-panel site-navigation__item">
             <button class = "catalog-panel__button" type="button">Каталог товаров</button>
             <ul class="catalog-list catalog-panel__list">
-              <li class = "catalog-list__item"><a href="catalog.html">Виртуальная реальность</a></li>
-              <li class = "catalog-list__item"><a href="catalog.html">Моноподы для селфи</a></li>
-              <li class = "catalog-list__item"><a href="catalog.html">Экшн-камеры</a></li>
-              <li class = "catalog-list__item"><a href="catalog.html">Фитнес-браслеты</a></li>
-              <li class = "catalog-list__item"><a href="catalog.html">Умные часы</a></li>
-              <li class = "catalog-list__item"><a href="catalog.html">Квадрокоптер</a></li>
+              <ul class ="catalog-list__column">
+                <li class = "catalog-list__item"><a href="catalog.html">Виртуальная реальность</a></li>
+                <li class = "catalog-list__item"><a href="catalog.html">Моноподы для селфи</a></li>
+                <li class = "catalog-list__item"><a href="catalog.html">Экшн-камеры</a></li>
+              </ul>
+              <ul class ="catalog-list__column">
+                <li class = "catalog-list__item"><a href="catalog.html">Фитнес-браслеты</a></li>
+                <li class = "catalog-list__item"><a href="catalog.html">Умные часы</a></li>
+              </ul>
+              <ul class ="catalog-list__column">
+                <li class = "catalog-list__item"><a href="catalog.html">Квадрокоптер</a></li>
+              </ul>
             </ul>
           </li>
           <li class = "site-navigation__item"><a href="#">Доставка</a></li>
@@ -51,7 +57,7 @@
   <main class= "catalog-page container">
     <h1 class= "main-title">Моноподы для селфи</h1>
     <ul class = "breadcrumbs">
-      <li class = "breadcrumbs__item"><a href="index.html">Главная</a></li>
+      <li class = ""><a href="index.html">Главная</a></li>
       <li class = "breadcrumbs__item"><a href="catalog.html">Каталог товаров</a></li>
       <li class = "breadcrumbs__item">Моноподы для селфи</li>
     </ul>
@@ -115,7 +121,7 @@
         <h3 class = "sort-panel__title">Сортировка:</h3>
         <ul class = "sort-type sort-panel__sort-type">
           <li><button class ="sort-type__item-active" type="button">По цене</button></li>
-          <li"><button class ="sort-type__item" type="button">По типу</button></li>
+          <li><button class ="sort-type__item" type="button">По типу</button></li>
           <li><button class ="sort-type__item" type="button">По популярности</button></li>
         </ul>
         <ul class = "order-type sort-panel__order-type">

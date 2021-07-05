@@ -382,7 +382,7 @@ grid-area: submit;
   margin-bottom:20px;
 }
 
-.top-goods__slider-control {
+.top-goods__slider-control   {
   display: flex;
   flex-direction:row;
 }
@@ -400,8 +400,50 @@ grid-area: submit;
   justify-content: space-around;
   padding:0;
 }
+/*-------------FLEXBOX__CATALOG----------------*/
+
+.breadcrumbs{
+  display: flex;
+  flex-wrap:wrap;
+}
 
 
+.filter__panel{
+  display: flex;
+  flex-direction: column;
+}
+
+.filter-menu__field{
+  display: flex;
+  flex-direction: column;
+}
+
+.sort-panel{
+  display: flex;
+}
+
+.sort-panel__sort-type{
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.sort-panel__order-type{
+  display: flex;
+}
+
+.item-card__description {
+  display: flex;
+}
+
+.filter-result__navigation{
+  display: flex;
+  justify-content: space-between;
+}
+
+.pagination__page-list{
+  display: flex;
+  justify-content: space-between;
+}
 
 /*______________ОСНОВНАЯ СТИЛИЗАЦИЯ____________*/
 
